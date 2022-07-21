@@ -1,0 +1,55 @@
+.landingPageOval {
+    background-image: url("../../assets/images/Oval.png");
+    height: 500px;
+    width: 600px;
+    position: absolute;
+    bottom: -70px;
+    right: 0;
+    background-size: cover;
+    opacity: 0.7;
+}
+
+.landingPageContainer {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.landingPageMidSection {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(10%, -50%);
+}
+
+@media screen and (max-width: 1060px) {
+    .landingPageOval {
+        height: 400px;
+        width: 500px;
+    }
+}
+
+@media (max-width: 740px) {
+    .landingPageOval {
+        height: 300px;
+        width: 400px;
+    }
+
+    .contactUsButton {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .sourceBookService {
+        font-size: 40px;
+    }
+
+    .yourLoadsWith,
+    .yourLoadsWith span {
+        font-size: 40px;
+    }
+
+    .content {
+        font-size: 16px;
+    }
+}
