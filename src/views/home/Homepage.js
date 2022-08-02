@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Link, Typography } from "@mui/material";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import './styles.css'
 import { PRIMARY_BLUE } from "../../utils/utils";
@@ -9,7 +9,9 @@ const HomePage = () => {
         <Box component='main' p={8}>
             <Stack direction='row' justifyContent='space-between' alignItems={'center'}>
                 <Typography sx={{ color: PRIMARY_BLUE, fontSize: 32, fontWeight: 700 }}>freightdok.</Typography>
-
+                <Link href="https://app.freightdok.io/login" underline="none" sx={{ color:"black", fontSize: 22, fontWeight:700}}>
+                  {'Login'}
+                </Link>
             </Stack>
             <Box className={'landingPageMidSection'}>
                 <Stack sx={{ maxWidth: 600, mr: 5 }}>
@@ -25,7 +27,7 @@ const HomePage = () => {
                 </Stack>
                 <Stack mt={3}>
                     <Button variant={'contained'} className='contactUsButton'
-                        sx={{ py: '12px', width: 262, fontSize: 22, display: 'flex', justifyContent: 'space-around' }}
+                        sx={{ py: '12px', width: 250, fontSize: 22, display: 'flex'}}
                         endIcon={<ArrowForwardIcon />}
                     >
                         Contact Us
