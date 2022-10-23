@@ -8,6 +8,9 @@
 
 }
 
+.rightCommonCSS h1 {
+    font-size: 28px !important;
+}
 
 .featuresMainContainer h3 {
     width: 75%;
