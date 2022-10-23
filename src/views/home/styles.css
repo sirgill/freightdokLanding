@@ -12,7 +12,7 @@
 
 .landingPageContainer {
     height: 100vh;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .landingPageMidSection {
@@ -56,7 +56,12 @@
 
     .content {
         font-size: 16px;
+        line-height: 40px;
         white-space: inherit;
+    }
+
+    .landingPageMidSection {
+        width: 80%;
     }
 }
 

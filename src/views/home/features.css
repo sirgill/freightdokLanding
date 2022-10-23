@@ -1,0 +1,168 @@
+:root {
+    --primaryBlue: rgb(0, 145, 255);
+}
+
+
+.featuresMainContainer {
+    font-family: Myriad-Pro Regular, Sans-serif;
+
+}
+
+
+.featuresMainContainer h3 {
+    width: 75%;
+    font-size: 22px;
+}
+
+.featuresContainer {
+    width: 100%;
+    display: flex;
+}
+
+.leftFeaturesContainer {
+    width: 50%;
+    line-height: 40px;
+    display: flex;
+    margin-right: 5rem;
+}
+
+.leftCommonCSS {
+    width: 50%;
+    line-height: 40px;
+}
+
+.rightCommonCSS {
+    width: 50%;
+    margin-top: 4rem;
+    line-height: '35px';
+}
+
+.rightCommonCSS h1 {
+    font-size: 32px;
+}
+
+.rightFeaturesContainer {
+    width: 50%;
+    margin-top: 1rem;
+    line-height: 40px;
+    margin-left: 5rem;
+}
+
+.landingLappy {
+    height: 40vmin;
+    margin-right: -70px;
+    animation: float 5s ease-in-out infinite;
+}
+
+.landingMobile {
+    height: 40vmin;
+    animation: float 5s ease-in-out infinite;
+}
+
+.footerMain {
+    height: 50px;
+    width: 100%;
+    margin-top: 12rem;
+    font-size: 32px;
+}
+
+.foot {
+    padding-left: 3rem;
+}
+
+
+.foot p {
+    padding: 1rem;
+    font-size: 25px;
+}
+
+.headerFeat {
+    font-size: 32px;
+    padding-left: 2.5rem;
+    color: var(--primaryBlue)
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .rightFeaturesContainer {
+        width: 100%;
+        margin-top: 1rem;
+        line-height: 40px;
+    }
+
+    .rightFeaturesContainer h3 {
+        margin-left: 0;
+        padding-left: 2.5rem !important;
+        width: 100%;
+        text-align: center
+    }
+
+    .featuresContainer {
+        flex-direction: column;
+
+    }
+
+    .headerFeat {
+        padding-left: 0;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .leftCommonCSS {
+        width: 100%;
+    }
+
+    .rightCommonCSS {
+        width: 100%;
+
+    }
+
+    .rightCommonCSS h1 {
+        font-size: 22px;
+    }
+
+    .rightCommonCSS h3 {
+        text-align: center !important;
+        line-height: 40px;
+    }
+
+    .footerMain {
+        font-size: 24px;
+    }
+
+    .foot {
+        padding-left: 0;
+    }
+
+    .foot p {
+        font-size: 16px;
+    }
+
+    .leftFeaturesContainer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0
+    }
+
+    .leftCommonCSS h1 {
+        padding-left: 0;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .rightCommonCSS h1 {
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .featuresMainContainer h3 {
+        padding-left: 0;
+        width: 80%;
+        font-size: 16px;
+        margin: 20px;
+        text-align: justify;
+    }
+}
