@@ -9,7 +9,7 @@ const LandingPageHead = () => (<Box sx={{ position: 'relative' }} className={'la
     <Box component='main' p={8}>
         <Stack direction='row' justifyContent='space-between' alignItems={'center'}>
             <Typography sx={{ color: PRIMARY_BLUE, fontSize: 32, fontWeight: 700 }}>freightdok.</Typography>
-            <Link href="https://app.freightdok.io/login" underline="none" sx={{ color: "black", fontSize: 32, fontWeight: 700 }}>
+            <Link href="https://app.freightdok.io/login" underline="none" sx={{ color: "black", fontSize: 25, fontWeight: 700 }}>
                 {'Login'}
             </Link>
         </Stack>

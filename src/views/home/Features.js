@@ -41,7 +41,7 @@ const FeaturesTop = () => {
                 <h3 style={{ paddingLeft: '0.5rem', color: '#a6a6a6', fontWeight: '500' }}>Build a schedule that keeps your wheels turning. Increase utlization while decreasing deadhead. </h3>
 
                 <h1 style={{ paddingLeft: '0.5rem' }}>Real Loads </h1>
-                <h3 style={{ paddingLeft: '0.5rem', color: '#a6a6a6', fontWeight: '500' }}>No more fake, booked, or duplicat loads. freightdok automatically fetches loads that are open to book and bid in real time.
+                <h3 style={{ paddingLeft: '0.5rem', color: '#a6a6a6', fontWeight: '500' }}>No more fake, booked, or duplicate loads. freightdok automatically fetches loads that are open to book and bid in real time.
 
                 </h3>
 
@@ -69,7 +69,7 @@ const FeaturesFinal = () => {
                 <h1 style={{ paddingLeft: '0.5rem' }}>One Click Invoices
 
                 </h1>
-                <h3 style={{ paddingLeft: '0.5rem', color: '#a6a6a6', fontWeight: '500' }}>You're too busy to send out invoices manually. With one click you can create invocies. </h3>
+                <h3 style={{ paddingLeft: '0.5rem', color: '#a6a6a6', fontWeight: '500' }}>You're too busy to send out invoices manually. Create invocies with just one click. </h3>
 
                 <h1 style={{ paddingLeft: '0.5rem' }}>Capture Data </h1>
                 <h3 style={{ paddingLeft: '0.5rem', color: '#a6a6a6', fontWeight: '500' }}>
@@ -84,12 +84,12 @@ const FeaturesFinal = () => {
 
 const Footer = () => {
     return (<footer className="footerMain">
-        <p style={{ marginLeft: '4rem' }}> Copyright &#169; 2022.  freightdok</p>
         <div className="foot" style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <p>Copyright &#169; 2022.  freightdok</p>
             <p>Indianapolis, Indiana</p>
             <p>Terms of Use
             </p>
-            <p>Privacy Policy
+            <p style={{ marginRight: '2rem' }}>Privacy Policy
             </p>
         </div>
     </footer>
