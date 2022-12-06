@@ -1,18 +1,20 @@
 import React from 'react';
 import { Box } from "@mui/material";
+import {Link} from 'react-router-dom';
 import './features.css'
 import lappy from "../../assets/images/landinglappy.png"
 import mobile from "../../assets/images/landingmobile.png"
+import {routes} from "../../common/constants";
 
 const FeaturesBottom = () => {
     return (<section >
         <Box mt={10} className={'featuresContainer'}>
             <section className={'leftFeaturesContainer'} >
                 <div>
-                    <img className="landingLappy" src={lappy} />
+                    <img className="landingLappy" src={lappy}  alt={''}/>
                 </div>
                 <div>
-                    <img className="landingMobile" src={mobile} />
+                    <img className="landingMobile" src={mobile}  alt={''}/>
                 </div>
             </section>
             <section style={{ margin: 0 }} className={'rightFeaturesContainer'}>
@@ -52,8 +54,6 @@ const FeaturesTop = () => {
 
 
 
-
-
 const FeaturesFinal = () => {
 
     return (<section >
@@ -84,14 +84,13 @@ const FeaturesFinal = () => {
 
 const Footer = () => {
     return (<footer className="footerMain">
-        <div className="foot" style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Box className="foot" sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <p>Copyright &#169; 2022.  freightdok</p>
             <p>Indianapolis, Indiana</p>
             <p>Terms of Use
             </p>
-            <p style={{ marginRight: '2rem' }}>Privacy Policy
-            </p>
-        </div>
+            <Link to={routes.privacyPolicy} style={{ marginRight: '2rem' }}>Privacy Policy</Link>
+        </Box>
     </footer>
     )
 }
