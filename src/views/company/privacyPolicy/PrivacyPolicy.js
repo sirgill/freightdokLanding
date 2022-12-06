@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import ArrowForwardIcon from '@mui/icons-material/ArrowBackIos';
 import { Link } from "react-router-dom";
@@ -180,4 +180,4 @@ const PrivacyPolicy = () => {
     </Stack >
 }
 
-export default PrivacyPolicy;
+export default memo(PrivacyPolicy);
