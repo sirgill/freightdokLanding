@@ -87,8 +87,7 @@ const Footer = () => {
         <Box className="foot" sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <p>Copyright &#169; {new Date().getFullYear()}  freightdok</p>
             <p>Indianapolis, Indiana</p>
-            <p>Terms of Use
-            </p>
+            <Link to={routes.useTerms}>Terms of Use</Link>
             <Link to={routes.privacyPolicy} style={{ marginRight: '2rem' }}>Privacy Policy</Link>
         </Box>
     </footer>
