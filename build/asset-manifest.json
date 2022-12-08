@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0a25f026.css",
+    "main.js": "/static/js/main.c22f0435.js",
+    "static/js/787.66b477fd.chunk.js": "/static/js/787.66b477fd.chunk.js",
+    "static/media/landinglappy.png": "/static/media/landinglappy.753f032e59b4a474f979.png",
+    "static/media/landingmobile.png": "/static/media/landingmobile.94811d149502814238f3.png",
+    "static/media/Oval.png": "/static/media/Oval.52a9d9c99519c65a8ec9.png",
+    "static/media/MYRIADPRO-BOLDCOND.OTF": "/static/media/MYRIADPRO-BOLDCOND.3b1318793925525d5930.OTF",
+    "static/media/MYRIADPRO-REGULAR.OTF": "/static/media/MYRIADPRO-REGULAR.6c518fcde55bd3397d56.OTF",
+    "static/media/MyriadPro-Light.otf": "/static/media/MyriadPro-Light.1d169f609b1972709363.otf",
+    "index.html": "/index.html",
+    "main.0a25f026.css.map": "/static/css/main.0a25f026.css.map",
+    "main.c22f0435.js.map": "/static/js/main.c22f0435.js.map",
+    "787.66b477fd.chunk.js.map": "/static/js/787.66b477fd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0a25f026.css",
+    "static/js/main.c22f0435.js"
+  ]
+}
