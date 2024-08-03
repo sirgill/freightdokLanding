@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Header from '../../components/Header';
 import { Box, Button, Grid, Stack, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles'
@@ -12,31 +12,16 @@ import ch from "./../../assets/images/ch.png"
 import everest from "./../../assets/images/everest.png"
 import slog from "./../../assets/images/sgog.png"
 import Footer from '../../components/Footer';
-
-import './styles.css';
 import ExplorePlans from './ExplorePlans';
 
-const Home = () => {
-    const [data, setData] = useState({}),
-        [headerConfig, setHeaderConfig] = useState({});
+import './styles.css';
+import { Context } from '../../providers/context';
 
-    useEffect(() => {
-        const homepageConfig = async () => {
-            const res = await fetch('/homeConfig.json');
-            const result = await res.json();
-            setData(result);
-        }
-        const headerConfig = async () => {
-            const res = await fetch('/headerConfig.json');
-            const result = await res.json();
-            setHeaderConfig(result);
-        }
-        headerConfig();
-        homepageConfig();
-    }, []);
+const Home = () => {
+    const { data } = useContext(Context)
 
     const goToSignUp = () => {
-        window.open(headerConfig.signupUrl, '_blank');
+        window.open(data.signupUrl, '_blank');
     }
 
     return (
@@ -108,7 +93,7 @@ const OurPartnersSection = () => {
         slidesToShow: 5,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 1500,
+        autoplaySpeed: 3000,
         arrows: false,
         dots: false,
         pauseOnHover: false,
@@ -128,42 +113,38 @@ const OurPartnersSection = () => {
         ],
     };
 
+    return (
+        <>
+            <div className="container">
+                <div style={{ width: "100%" }}>
+                    <h1 style={{ textAlign: "center", paddingBottom: "40px" }}>Our Partners</h1>
+                    <div style={{ marginLeft: "120px" }}>
+                        <Slider {...sliderSettings} >
+                            <div >
+                                <img src={cw} alt="logo" />
+                            </div>
+                            <div >
+                                <img src={capstone} alt="logo" />
+                            </div>
+                            <div >
+                                <img src={ch} alt="logo" />
+                            </div>
+                            <div >
+                                <img src={loadsmart} alt="logo" />
+                            </div>
+                            <div >
+                                <img style={{ height: "45px", objectFit: "contain" }} src={everest} alt="logo" />
+                            </div>
+                            <div >
+                                <img src={slog} alt="logo" />
+                            </div>
 
-
-
-    return (<> <div className="container">
-
-        <div style={{ width: "100%" }}>
-            <h1 style={{ textAlign: "center", paddingBottom: "40px" }}>Our Partners</h1>
-            <div style={{ marginLeft: "120px" }}>
-                <Slider {...sliderSettings} >
-                    <div >
-                        <img src={cw} alt="logo" />
+                        </Slider>
                     </div>
-                    <div >
-                        <img src={capstone} alt="logo" />
-                    </div>
-                    <div >
-                        <img src={ch} alt="logo" />
-                    </div>
-                    <div >
-                        <img src={loadsmart} alt="logo" />
-                    </div>
-                    <div >
-                        <img style={{ height: "45px", objectFit: "contain" }} src={everest} alt="logo" />
-                    </div>
-                    <div >
-                        <img src={slog} alt="logo" />
-                    </div>
-
-                </Slider>
-
-
-
+                </div>
             </div>
-        </div>
-
-    </div></>)
+        </>
+    )
 }
 
 export default Home

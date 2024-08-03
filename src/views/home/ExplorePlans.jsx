@@ -4,6 +4,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import { FONT_COLOR_SECONDARY, PRIMARY_BLUE } from '../../utils/utils'
+import { routes } from '../../common/constants'
 
 const Card = styled(Box)(() => ({
     display: 'flex',
@@ -33,7 +34,7 @@ const ExplorePlans = ({ explorePlans = [] }) => {
                     })}
                 </Grid>
                 <Grid item xs={12} textAlign='center'>
-                    <Typography component={Link} to='/plans' className='link-navigate' color={PRIMARY_BLUE} sx={{ textDecoration: 'none' }} align='center'>
+                    <Typography component={Link} to={routes.pricing} className='link-navigate' color={PRIMARY_BLUE} sx={{ textDecoration: 'none' }} align='center'>
                         View our plans and pricing &#8594;
                     </Typography>
                 </Grid>
