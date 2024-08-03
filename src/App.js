@@ -1,7 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Homepage from './views/home/Homepage';
 import PrivacyPolicy from "./views/company/privacyPolicy/PrivacyPolicy";
 import { routes } from "./common/constants";
 import TermsOfUse from "./views/company/termsOfUse/TermsOfUse";
