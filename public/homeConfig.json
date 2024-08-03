@@ -1,0 +1,44 @@
+{
+    "title": "Source.Book.Service.",
+    "subtitle": "Your Loads with Data",
+    "detail": "Source your loads, streamline your bookings, and automate check calls all within freightdok. The new way of booking loads backed by data.",
+    "howDoWeDoSubtext": "Today, truckers spend hours of their day sourcing freight and handling backend operations. We’ve made it our goal to change that by helping truckers find loads without having to search through hundreds of load boards and automating back office operations.",
+    "operations": [
+        {
+            "title": "Automate your sourcing",
+            "detail": "Interact with hundreds of loads sourced from various freight brokers all within freightdok desktop and mobile apps.",
+            "image": "automate-sourceing"
+        },
+        {
+            "title": "One-Click Invoices",
+            "image": "oneclick-invoice",
+            "detail": "Build a schedule that keeps your wheels turning. Increase utilization while decreasing deadhead."
+        },
+        {
+            "title": "Business Insights",
+            "image": "business-insights",
+            "detail": "No more fake, booked, or duplicate loads. freightdok automatically fetches loads that are open to book and bid in real time."
+        }
+    ],
+    "appleStoreLink": "#",
+    "googleStoreLink": "#",
+    "explorePlans": [
+        {
+            "title": "Software",
+            "image": "user",
+            "imgWidth": "2.5rem",
+            "detail": "Use freightdok to bid, book, service, and streamline back office tasks. "
+        },
+        {
+            "title": "Software",
+            "image": "sftteam",
+            "detail": "Operate on your authority and let us handle all your back office tasks and operations."
+        },
+        {
+            "image": "user",
+            "imgWidth": "2.5rem",
+            "title": "Software",
+            "detail": "Lease onto our authority and we will help manage your operations, payments, and compliance."
+        }
+    ]
+}
