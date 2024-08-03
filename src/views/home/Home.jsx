@@ -115,39 +115,38 @@ const OurPartnersSection = () => {
         ],
     };
 
-    return (<> <div className="container">
+    return (
+        <>
+            <div className="container">
+                <div style={{ width: "100%" }}>
+                    <h1 style={{ textAlign: "center", paddingBottom: "40px" }}>Our Partners</h1>
+                    <div style={{ marginLeft: "120px" }}>
+                        <Slider {...sliderSettings} >
+                            <div >
+                                <img src={cw} alt="logo" />
+                            </div>
+                            <div >
+                                <img src={capstone} alt="logo" />
+                            </div>
+                            <div >
+                                <img src={ch} alt="logo" />
+                            </div>
+                            <div >
+                                <img src={loadsmart} alt="logo" />
+                            </div>
+                            <div >
+                                <img style={{ height: "45px", objectFit: "contain" }} src={everest} alt="logo" />
+                            </div>
+                            <div >
+                                <img src={slog} alt="logo" />
+                            </div>
 
-        <div style={{ width: "100%" }}>
-            <h1 style={{ color: "#0091ff", textAlign: "center", paddingBottom: "40px" }}>Our Partners</h1>
-            <div style={{ marginLeft: "120px" }}>
-                <Slider {...sliderSettings} >
-                    <div >
-                        <img src={cw} alt="logo" />
+                        </Slider>
                     </div>
-                    <div >
-                        <img src={capstone} alt="logo" />
-                    </div>
-                    <div >
-                        <img src={ch} alt="logo" />
-                    </div>
-                    <div >
-                        <img src={loadsmart} alt="logo" />
-                    </div>
-                    <div >
-                        <img style={{ height: "45px", objectFit: "contain" }} src={everest} alt="logo" />
-                    </div>
-                    <div >
-                        <img src={slog} alt="logo" />
-                    </div>
-
-                </Slider>
-
-
-
+                </div>
             </div>
-        </div>
-
-    </div></>)
+        </>
+    )
 }
 
 export default Home
