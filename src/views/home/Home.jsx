@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, } from 'react';
 import Header from '../../components/Header';
 import { Box, Button, Grid, Stack, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles'
@@ -12,31 +12,18 @@ import ch from "./../../assets/images/ch.png"
 import everest from "./../../assets/images/everest.png"
 import slog from "./../../assets/images/sgog.png"
 import Footer from '../../components/Footer';
+import ExplorePlans from './ExplorePlans';
+import { Context } from '../../providers/context';
 
 import './styles.css';
-import ExplorePlans from './ExplorePlans';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Home = () => {
-    const [data, setData] = useState({}),
-        [headerConfig, setHeaderConfig] = useState({});
-
-    useEffect(() => {
-        const homepageConfig = async () => {
-            const res = await fetch('/homeConfig.json');
-            const result = await res.json();
-            setData(result);
-        }
-        const headerConfig = async () => {
-            const res = await fetch('/headerConfig.json');
-            const result = await res.json();
-            setHeaderConfig(result);
-        }
-        headerConfig();
-        homepageConfig();
-    }, []);
+    const { data } = useContext(Context)
 
     const goToSignUp = () => {
-        window.open(headerConfig.signupUrl, '_blank');
+        window.open(data.signupUrl, '_blank');
     }
 
     return (
@@ -108,7 +95,7 @@ const OurPartnersSection = () => {
         slidesToShow: 5,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 1500,
+        autoplaySpeed: 3000,
         arrows: false,
         dots: false,
         pauseOnHover: false,
@@ -128,13 +115,10 @@ const OurPartnersSection = () => {
         ],
     };
 
-
-
-
     return (<> <div className="container">
 
         <div style={{ width: "100%" }}>
-            <h1 style={{ textAlign: "center", paddingBottom: "40px" }}>Our Partners</h1>
+            <h1 style={{ color: "#0091ff", textAlign: "center", paddingBottom: "40px" }}>Our Partners</h1>
             <div style={{ marginLeft: "120px" }}>
                 <Slider {...sliderSettings} >
                     <div >

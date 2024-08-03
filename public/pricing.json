@@ -1,0 +1,19 @@
+{
+    "pricing": [
+        ["Plans", "35.00 Per User", "8% per Load", "16% per Load"],
+        ["freightdok Loadboard", true, true, true],
+        ["Business Intelligence Dashboard", true, true, true],
+        ["Instant Bid & Book Loads", true, true, true],
+        ["Mobile App Access", true, true, true],
+        ["Back Office Support for Load Booking & Accessorial", false, true, true],
+        ["24/7 Support Service", false, true, true],
+        ["Contract Freight & Dedicated Lanes", false, true, true],
+        ["Lease on to our Authority", false, false, true],
+        ["Insurance Program", false, false, true],
+        ["Plates Program", false, false, true],
+        ["DOT Compliance", false, false, true],
+        ["ELD", false, false, true],
+        ["Drug Test Program", false, false, true],
+        ["Fuel Card", false, false, true]
+    ]
+}
