@@ -1,6 +1,6 @@
 import { Box, Button, Stack as MuiStack, Paper, Popover, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { BG_COLOR, FONT_COLOR_SECONDARY, PRIMARY_BLUE } from '../utils/utils'
 import { Link, NavLink } from 'react-router-dom'
 import { routes } from '../common/constants'

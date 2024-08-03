@@ -48,7 +48,7 @@ const Footer = ({ appleStoreLink, googleStoreLink }) => {
                                 <Typography fontWeight={600} fontSize={18} pb={2}>Company</Typography>
                                 <Typography className='links-navigate' fontSize={14} pb={1}>About Us</Typography>
                                 <Typography className='links-navigate' fontSize={14} pb={1}>Contact Us</Typography>
-                                <Typography className='links-navigate' fontSize={14} pb={1}>Pricing</Typography>
+                                <Typography component={Link} to={routes.pricing} className='links-navigate' fontSize={14} pb={1}>Pricing</Typography>
                             </Stack>
                         </Grid>
                         <Grid item xs={5} sm={4} md={4}>
