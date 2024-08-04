@@ -70,10 +70,7 @@ const Header = () => {
     return (
         <Stack direction='row' justifyContent='space-between' alignItems='center' component='header'>
             <Typography sx={{ color: PRIMARY_BLUE, fontSize: 32, fontWeight: 700, textDecoration: 'none' }} component={Link} to='/'>freightdok.</Typography>
-            <NavLinks direction='row' gap={5} sx={{
-
-            }}
-            >
+            <NavLinks direction='row' gap={5} sx={{}}>
                 <Typography component={NavLink} to='/' >
                     Home
                 </Typography>

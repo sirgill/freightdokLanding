@@ -23,17 +23,26 @@ const DataContext = ({ children }) => {
             return {}
         }
     }
+    async function getAboutUsConfig() {
+        try {
+            const res = await fetch('/aboutUs.json');
+            const result = await res.json();
+            return result;
+        } catch (error) {
+            return {}
+        }
+    }
 
     useEffect(() => {
         const homeConfig = async () => {
-            const response = await Promise.allSettled([getHomeConfig(), getHeaderConfig()]);
+            const response = await Promise.allSettled([getHomeConfig(), getHeaderConfig(), getAboutUsConfig()]);
             const result = {}
             response.forEach(res => {
                 if (res.status === 'fulfilled') {
                     Object.assign(result, { ...res.value })
                 }
             })
-            console.log(result)
+            console.log('context', result)
             setData({
                 data: result
             });

@@ -7,6 +7,7 @@ import TermsOfUse from "./views/company/termsOfUse/TermsOfUse";
 import Home from './views/home/Home';
 import Pricing from './views/pricing/Pricing';
 import DataContext from './providers/context';
+import AboutUs from './views/about_us/AboutUs';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path={routes.privacyPolicy} element={<PrivacyPolicy />} />
             <Route path={routes.useTerms} element={<TermsOfUse />} />
             <Route path={routes.pricing} element={<Pricing />} />
+            <Route path={routes.aboutUs} element={<AboutUs />} />
             <Route path='*' element={<Home />} />
           </Routes>
         </BrowserRouter>
