@@ -21,45 +21,11 @@ const TableDataCell = styled(TableCell)`
     border: none;
 `
 
-const CustomTable = ({ data }) => {
+const Info = ({ pricing: data = {} }) => {
     const { pricing } = data || {};
 
     const getIcon = (val) => val ? <CheckCircleIcon sx={{ color: '#6ACE0C' }} /> : <CancelIcon sx={{ color: 'red' }} />
 
-    const rows = (pricing || []).map((price, i) => {
-        return <TableRow key={i}>
-            {price.map((item, j) => {
-                const cell = typeof item === 'boolean' ? getIcon(item) : item;
-                return (
-                    <TableCell
-                        key={j}
-                        sx={{
-                            textAlign: j === 0 ? 'left' : 'center',
-                            color: FONT_COLOR_SECONDARY,
-                            border: '1px solid #c4c4c4',
-                            borderLeft: j === 0 ? 'none' : '1px solid #c4c4c4',
-                            borderRight: j === price.length - 1 ? 'none' : '1px solid #c4c4c4',
-                            padding: '8px',
-                            backgroundColor: i % 2 !== 0 ? '#F3FBFC' : 'white', // header row background
-                        }}
-                    >
-                        {cell}
-                    </TableCell>
-                );
-            })}
-        </TableRow>
-    })
-
-    return <TableContainer>
-        <Table>
-            <TableBody>
-                {rows}
-            </TableBody>
-        </Table>
-    </TableContainer>
-}
-
-const Info = ({ pricing }) => {
     return <Stack>
         <Typography align='center' fontSize='2rem' color={FONT_COLOR_SECONDARY}>Our Plans</Typography>
         <TableContainer>
@@ -85,10 +51,32 @@ const Info = ({ pricing }) => {
                         <TableDataCell><Button fullWidth variant='outlined'>Get Started</Button></TableDataCell>
                         <TableDataCell><Button fullWidth variant='outlined'>Get Started</Button></TableDataCell>
                     </TableRow>
+                    {(pricing || []).map((price, i) => {
+                        return <TableRow key={i}>
+                            {price.map((item, j) => {
+                                const cell = typeof item === 'boolean' ? getIcon(item) : item;
+                                return (
+                                    <TableCell
+                                        key={j}
+                                        sx={{
+                                            textAlign: j === 0 ? 'left' : 'center',
+                                            color: FONT_COLOR_SECONDARY,
+                                            border: '1px solid #c4c4c4',
+                                            borderLeft: j === 0 ? 'none' : '1px solid #c4c4c4',
+                                            borderRight: j === price.length - 1 ? 'none' : '1px solid #c4c4c4',
+                                            padding: '8px',
+                                            backgroundColor: i % 2 !== 0 ? '#F3FBFC' : 'white', // header row background
+                                        }}
+                                    >
+                                        {cell}
+                                    </TableCell>
+                                );
+                            })}
+                        </TableRow>
+                    })}
                 </TableBody>
             </Table>
         </TableContainer>
-        <CustomTable data={pricing} />
     </Stack>
 }
 

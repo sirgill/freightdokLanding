@@ -74,7 +74,7 @@ const Header = () => {
                 <Typography component={NavLink} to='/' >
                     Home
                 </Typography>
-                <Typography component={NavLink} to='/feature'>Feature</Typography>
+                <Typography component={NavLink} to={routes.features}>Feature</Typography>
                 <Typography component={NavLink} to={routes.pricing}>Pricing</Typography>
             </NavLinks>
             <MuiStack direction='row' gap={3}
