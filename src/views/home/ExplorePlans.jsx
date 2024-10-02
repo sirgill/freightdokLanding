@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import { FONT_COLOR_SECONDARY, PRIMARY_BLUE } from '../../utils/utils'
+import { FONT_COLOR_PRIMARY, FONT_COLOR_SECONDARY, PRIMARY_BLUE } from '../../utils/utils'
 import { routes } from '../../common/constants'
 
 const Card = styled(Box)(() => ({
@@ -17,7 +17,7 @@ const ExplorePlans = ({ explorePlans = [] }) => {
         <Box sx={{ py: 5 }}>
             <Grid container sx={{ p: 3, px: 5, gap: 5 }}>
                 <Grid item xs={12}>
-                    <Typography fontSize={28} color={FONT_COLOR_SECONDARY} fontWeight={600} align='center'>Explore our plans</Typography>
+                    <Typography fontSize={28} color={FONT_COLOR_PRIMARY} fontWeight={600} align='center'>Explore our plans</Typography>
                     <Typography fontSize={16} color={FONT_COLOR_SECONDARY} align='center'>
                         Find the right plans for your need.
                     </Typography>
@@ -27,14 +27,14 @@ const ExplorePlans = ({ explorePlans = [] }) => {
                         return <Card key={plan.title}>
                             <Box component='img' alt={plan.title} sx={{ p: .5, width: plan.imgWidth ? plan.imgWidth : '5rem' }} src={plan.image + '.svg'} />
                             <Box sx={{ maxWidth: '30ch' }}>
-                                <Typography fontSize={22} color={FONT_COLOR_SECONDARY} fontWeight={600}>{plan.title}</Typography>
+                                <Typography fontSize={22} color={FONT_COLOR_PRIMARY} fontWeight={600}>{plan.title}</Typography>
                                 <Typography fontSize={14} color={FONT_COLOR_SECONDARY}>{plan.detail}</Typography>
                             </Box>
                         </Card>
                     })}
                 </Grid>
                 <Grid item xs={12} textAlign='center'>
-                    <Typography component={Link} to={routes.pricing} className='link-navigate' color={PRIMARY_BLUE} sx={{ textDecoration: 'none' }} align='center'>
+                    <Typography component={Link} to={routes.pricing} className='link-navigate' color={PRIMARY_BLUE} sx={{ textDecoration: 'none', fontWeight: 600 }} align='center'>
                         View our plans and pricing &#8594;
                     </Typography>
                 </Grid>

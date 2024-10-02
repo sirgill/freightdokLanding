@@ -4,7 +4,7 @@ import { Box, Button, Grid, Stack, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles'
 import Slider from 'react-slick';
 
-import { BG_COLOR, FONT_COLOR_SECONDARY, PRIMARY_BLUE } from '../../utils/utils';
+import { BG_COLOR, FONT_COLOR_PRIMARY, FONT_COLOR_SECONDARY, PRIMARY_BLUE } from '../../utils/utils';
 import cw from "./../../assets/images/cw.png"
 import capstone from "./../../assets/images/capstone.png"
 import loadsmart from "./../../assets/images/ld.jpg"
@@ -32,10 +32,10 @@ const Home = () => {
             <Box sx={{ p: 4, px: 15, backgroundColor: BG_COLOR, overflow: 'hidden' }} component='section'>
                 <Grid container position='relative'>
                     <Grid item sm={6} xs={12}>
-                        <Typography className='sourceBookService' sx={{ fontSize: '3em', fontWeight: 600 }}>{data?.title}</Typography>
+                        <Typography className='sourceBookService' sx={{ fontSize: '3em', fontWeight: 600, color: FONT_COLOR_PRIMARY }}>{data?.title}</Typography>
                         <Typography className='sourceBookService' sx={{ color: PRIMARY_BLUE, fontSize: '3em', fontWeight: 600 }}>{data?.subtitle}</Typography>
                         <Typography className='sourceBookService' sx={{ my: 4, fontSize: '1em', fontWeight: 500, color: '#717171' }}>{data?.detail}</Typography>
-                        <Button variant='contained' sx={{ px: 2 }}
+                        <Button variant='contained' sx={{ px: 4, py: 1 }}
                             onClick={goToSignUp}
                         >
                             Register
@@ -53,11 +53,11 @@ const Home = () => {
             <Box component='section' sx={{ mb: 0 }} className='sectionPadding'>
                 <Grid container sx={{ px: 6, py: 3 }} gap={3}>
                     <Grid item xs={12}>
-                        <Typography sx={{ fontSize: 36 }} color={FONT_COLOR_SECONDARY} align='center'>How do we do this?</Typography>
+                        <Typography sx={{ fontSize: 36 }} color={FONT_COLOR_PRIMARY} align='center'>How do we do this?</Typography>
                         <Typography sx={{ color: FONT_COLOR_SECONDARY }} align='center'>{data?.howDoWeDoSubtext}</Typography>
                     </Grid>
                     <Grid item xs={12}>
-                        <Stack direction='row' justifyContent='center' gap={3} flexWrap={'wrap'}>
+                        <Stack direction='row' justifyContent='center' gap={{ sm: 6, xs: 3 }} flexWrap={'wrap'}>
                             {(data?.operations || []).map(operation => {
                                 return <OperationCard {...operation} key={operation.title} />
                             })}
@@ -84,7 +84,7 @@ const Card = styled(Box)(({ theme }) => ({
 const OperationCard = ({ title, detail, image }) => {
     return <Card sx={{ p: 3, }}>
         <Box component='img' sx={{ mb: 1 }} loading='lazy' src={image + '.svg'} alt={title} />
-        <Typography sx={{ color: FONT_COLOR_SECONDARY }} fontSize={22} fontWeight={600} mb={1}>{title}</Typography>
+        <Typography sx={{ color: FONT_COLOR_PRIMARY }} fontSize={22} fontWeight={600} mb={1}>{title}</Typography>
         <Typography sx={{ color: FONT_COLOR_SECONDARY }} align='center'>{detail}</Typography>
     </Card>
 }

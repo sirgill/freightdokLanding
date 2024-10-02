@@ -84,7 +84,7 @@ const Header = () => {
                     }
                 }}
             >
-                <Button onClick={goToLogin} variant='outlined'>Login</Button>
+                <Button onClick={goToLogin} variant='text'>Login</Button>
                 <Button onClick={goToSignUp} variant='contained'>Signup</Button>
                 <Toggle>
                     <MenuToggle onClick={handleClick} open={open} />

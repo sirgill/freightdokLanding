@@ -6,7 +6,7 @@ import CancelIcon from '@mui/icons-material/Cancel';
 
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
-import { FONT_COLOR_SECONDARY } from '../../utils/utils'
+import { FONT_COLOR_PRIMARY, FONT_COLOR_SECONDARY } from '../../utils/utils'
 
 const TableHeaderCell = styled(TableCell)`
     font-weight: 600;
@@ -27,7 +27,7 @@ const Info = ({ pricing: data = {} }) => {
     const getIcon = (val) => val ? <CheckCircleIcon sx={{ color: '#6ACE0C' }} /> : <CancelIcon sx={{ color: 'red' }} />
 
     return <Stack>
-        <Typography align='center' fontSize='2rem' color={FONT_COLOR_SECONDARY}>Our Plans</Typography>
+        <Typography align='center' fontSize='2rem' color={FONT_COLOR_PRIMARY}>Our Plans</Typography>
         <TableContainer>
             <Table>
                 <TableHead>
