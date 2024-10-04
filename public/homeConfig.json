@@ -32,6 +32,7 @@
         {
             "title": "Software + Our Team",
             "image": "sftteam",
+            "imgWidth": "6rem",
             "detail": "Operate on your authority and let us handle all your back office tasks and operations."
         },
         {

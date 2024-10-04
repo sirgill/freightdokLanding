@@ -25,7 +25,7 @@ const ExplorePlans = ({ explorePlans = [] }) => {
                 <Grid item xs={12} sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 5 }}>
                     {explorePlans.map(plan => {
                         return <Card key={plan.title}>
-                            <Box component='img' alt={plan.title} sx={{ p: .5, width: plan.imgWidth ? plan.imgWidth : '5rem' }} src={plan.image + '.svg'} />
+                            <Box component='img' alt={plan.title} sx={{ p: .5, width: plan.imgWidth ? plan.imgWidth : '5rem' }} src={plan.image + '.png'} />
                             <Box sx={{ maxWidth: '30ch' }}>
                                 <Typography fontSize={22} color={FONT_COLOR_PRIMARY} fontWeight={600}>{plan.title}</Typography>
                                 <Typography fontSize={14} color={FONT_COLOR_SECONDARY}>{plan.detail}</Typography>
