@@ -1,6 +1,6 @@
 import React, { useContext, } from 'react';
 import Header from '../../components/Header';
-import { Box, Button, Grid, Stack, Typography } from '@mui/material';
+import { Box, Button, Fade, Grid, Stack, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles'
 import Slider from 'react-slick';
 
@@ -29,45 +29,61 @@ const Home = () => {
     return (
         <Box className='landingPageContainer' component='main'>
             <Header />
-            <Box sx={{ p: 4, px: 15, backgroundColor: BG_COLOR, overflow: 'hidden' }} component='section'>
+            <Box sx={{ p: 4, px: { xs: 4, sm: 5, md: 15 }, backgroundColor: BG_COLOR, overflow: 'hidden' }} component='section'>
                 <Grid container position='relative'>
-                    <Grid item sm={6} xs={12}>
-                        <Typography className='sourceBookService' sx={{ fontSize: '3em', fontWeight: 600, color: FONT_COLOR_PRIMARY }}>{data?.title}</Typography>
-                        <Typography className='sourceBookService' sx={{ color: PRIMARY_BLUE, fontSize: '3em', fontWeight: 600 }}>{data?.subtitle}</Typography>
-                        <Typography className='sourceBookService' sx={{ my: 4, fontSize: '1em', fontWeight: 500, color: '#717171' }}>{data?.detail}</Typography>
-                        <Button variant='contained' sx={{ px: 4, py: 1 }}
-                            onClick={goToSignUp}
-                        >
-                            Register
-                        </Button>
+                    <Grid item md={6} xs={12} sm={12}>
+                        <Fade timeout={200} in>
+                            <Box>
+                                <Typography className='sourceBookService' sx={{ fontSize: { xs: 32, sm: '3em', }, fontWeight: 600, color: FONT_COLOR_PRIMARY }}>{data?.title}</Typography>
+                                <Typography className='sourceBookService' sx={{ color: PRIMARY_BLUE, fontSize: { xs: 32, sm: '3em', }, fontWeight: 600 }}>{data?.subtitle}</Typography>
+                            </Box>
+                        </Fade>
+                        <Fade in timeout={400} >
+                            <Typography className='sourceBookService' sx={{ my: 4, fontSize: { xs: 16, md: 20 }, fontWeight: 500, color: '#717171' }}>{data?.detail}</Typography>
+                        </Fade>
+                        <Fade timeout={800} in>
+                            <Button variant='contained' sx={{ px: 4, py: 1 }}
+                                onClick={goToSignUp}
+                            >
+                                Register
+                            </Button>
+                        </Fade>
                     </Grid>
-                    <Grid item sm={6} xs={12}>
-                        <div className='landingPageOval' />
+                    <Grid item sm={6} xs={12} sx={{ display: { xs: 'none', md: 'block' } }}>
+                        <Box className='landingPageOval' />
                     </Grid>
                 </Grid>
 
             </Box>
-            <Box component='section' className='sectionPadding'>
-                <OurPartnersSection />
-            </Box>
+            <Fade in timeout={1000}>
+                <Box component='section' className='sectionPadding' sx={{ my: { sm: '5rem', xs: '1.5rem' } }}>
+                    <OurPartnersSection />
+                </Box>
+            </Fade>
             <Box component='section' sx={{ mb: 0 }} className='sectionPadding'>
                 <Grid container sx={{ px: 6, py: 3 }} gap={3}>
-                    <Grid item xs={12}>
-                        <Typography sx={{ fontSize: 36 }} color={FONT_COLOR_PRIMARY} align='center'>How do we do this?</Typography>
-                        <Typography sx={{ color: FONT_COLOR_SECONDARY }} align='center'>{data?.howDoWeDoSubtext}</Typography>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <Stack direction='row' justifyContent='center' gap={{ sm: 6, xs: 3 }} flexWrap={'wrap'}>
-                            {(data?.operations || []).map(operation => {
-                                return <OperationCard {...operation} key={operation.title} />
-                            })}
-                        </Stack>
-                    </Grid>
+                    <Fade in timeout={2000}>
+                        <Grid item xs={12}>
+                            <Typography sx={{ fontSize: 36 }} color={FONT_COLOR_PRIMARY} align='center'>How do we do this?</Typography>
+                            <Typography sx={{ color: FONT_COLOR_SECONDARY }} align='center'>{data?.howDoWeDoSubtext}</Typography>
+                        </Grid>
+                    </Fade>
+                    <Fade in timeout={2500}>
+                        <Grid item xs={12}>
+                            <Stack direction='row' justifyContent='center' gap={{ sm: 6, xs: 3 }} flexWrap={'wrap'}>
+                                {(data?.operations || []).map(operation => {
+                                    return <OperationCard {...operation} key={operation.title} />
+                                })}
+                            </Stack>
+                        </Grid>
+                    </Fade>
                 </Grid>
             </Box>
-            <Box component='section' sx={{ bgcolor: BG_COLOR }}>
-                <ExplorePlans explorePlans={data?.explorePlans} />
-            </Box>
+            <Fade in timeout={3000}>
+                <Box component='section' sx={{ bgcolor: BG_COLOR }}>
+                    <ExplorePlans explorePlans={data?.explorePlans} />
+                </Box>
+            </Fade>
             <Footer appleStoreLink={data?.appleStoreLink} googleStoreLink={data?.googleStoreLink} />
         </Box>
     )
@@ -101,15 +117,27 @@ const OurPartnersSection = () => {
         pauseOnHover: false,
         responsive: [
             {
-                breakpoint: 768,
+                breakpoint: 1024,
                 settings: {
                     slidesToShow: 4,
                 },
             },
             {
-                breakpoint: 520,
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 3,
+                },
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                },
+            },
+            {
+                breakpoint: 450,
+                settings: {
+                    slidesToShow: 1,
                 },
             },
         ],
@@ -120,7 +148,7 @@ const OurPartnersSection = () => {
             <div className="container">
                 <div style={{ width: "100%" }}>
                     <h1 style={{ textAlign: "center", paddingBottom: "40px" }}>Our Partners</h1>
-                    <div style={{ marginLeft: "120px" }}>
+                    <Box sx={{ px: { xs: 6, md: 8 } }}>
                         <Slider {...sliderSettings} >
                             <div >
                                 <img src={cw} alt="logo" />
@@ -142,7 +170,7 @@ const OurPartnersSection = () => {
                             </div>
 
                         </Slider>
-                    </div>
+                    </Box>
                 </div>
             </div>
         </>

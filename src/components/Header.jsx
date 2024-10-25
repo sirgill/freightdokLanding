@@ -69,7 +69,7 @@ const Header = () => {
 
     return (
         <Stack direction='row' justifyContent='space-between' alignItems='center' component='header'>
-            <Typography sx={{ color: PRIMARY_BLUE, fontSize: 32, fontWeight: 700, textDecoration: 'none' }} component={Link} to='/'>freightdok.</Typography>
+            <Typography sx={{ color: PRIMARY_BLUE, fontSize: { md: 32, xs: 20 }, fontWeight: 700, textDecoration: 'none' }} component={Link} to='/'>freightdok.</Typography>
             <NavLinks direction='row' gap={5} sx={{}}>
                 <Typography component={NavLink} to='/' >
                     Home
@@ -77,7 +77,7 @@ const Header = () => {
                 <Typography component={NavLink} to={routes.features}>Feature</Typography>
                 <Typography component={NavLink} to={routes.pricing}>Pricing</Typography>
             </NavLinks>
-            <MuiStack direction='row' gap={3}
+            <MuiStack direction='row' gap={{ sm: 3, xs: 1.5 }}
                 sx={{
                     '.MuiTypography-root': {
                         textDecoration: 'none'

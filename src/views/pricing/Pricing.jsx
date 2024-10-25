@@ -1,4 +1,4 @@
-import { Box, Button, Container, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material'
+import { Box, Button, Container, Fade, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import React, { useEffect, useState } from 'react'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
@@ -28,55 +28,57 @@ const Info = ({ pricing: data = {} }) => {
 
     return <Stack>
         <Typography align='center' fontSize='2rem' color={FONT_COLOR_PRIMARY}>Our Plans</Typography>
-        <TableContainer>
-            <Table>
-                <TableHead>
-                    <TableRow>
-                        <TableHeaderCell>Compare Plans</TableHeaderCell>
-                        <TableHeaderCell sx={{ fontSize: 18 }}>Software</TableHeaderCell>
-                        <TableHeaderCell sx={{ fontSize: 18 }}>Software + Team</TableHeaderCell>
-                        <TableHeaderCell sx={{ fontSize: 18 }}>Our Authority</TableHeaderCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    <TableRow>
-                        <TableDataCell>Choose your plan according to your organizational needs</TableDataCell>
-                        <TableDataCell>Use freightdok to bid, book, service, and streamline back office tasks. </TableDataCell>
-                        <TableDataCell>Operate on your authority and let us handle all your back office tasks and operations. </TableDataCell>
-                        <TableDataCell>Lease onto our authority and we will help manage your operations, payments, and compliance. </TableDataCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableDataCell />
-                        <TableDataCell><Button fullWidth variant='outlined'>Start free trial</Button></TableDataCell>
-                        <TableDataCell><Button fullWidth variant='outlined'>Get Started</Button></TableDataCell>
-                        <TableDataCell><Button fullWidth variant='outlined'>Get Started</Button></TableDataCell>
-                    </TableRow>
-                    {(pricing || []).map((price, i) => {
-                        return <TableRow key={i}>
-                            {price.map((item, j) => {
-                                const cell = typeof item === 'boolean' ? getIcon(item) : item;
-                                return (
-                                    <TableCell
-                                        key={j}
-                                        sx={{
-                                            textAlign: j === 0 ? 'left' : 'center',
-                                            color: FONT_COLOR_SECONDARY,
-                                            border: '1px solid #c4c4c4',
-                                            borderLeft: j === 0 ? 'none' : '1px solid #c4c4c4',
-                                            borderRight: j === price.length - 1 ? 'none' : '1px solid #c4c4c4',
-                                            padding: '8px',
-                                            backgroundColor: i % 2 !== 0 ? '#F3FBFC' : 'white', // header row background
-                                        }}
-                                    >
-                                        {cell}
-                                    </TableCell>
-                                );
-                            })}
+        <Fade in timeout={800}>
+            <TableContainer>
+                <Table>
+                    <TableHead>
+                        <TableRow>
+                            <TableHeaderCell>Compare Plans</TableHeaderCell>
+                            <TableHeaderCell sx={{ fontSize: 18 }}>Software</TableHeaderCell>
+                            <TableHeaderCell sx={{ fontSize: 18 }}>Software + Team</TableHeaderCell>
+                            <TableHeaderCell sx={{ fontSize: 18 }}>Our Authority</TableHeaderCell>
                         </TableRow>
-                    })}
-                </TableBody>
-            </Table>
-        </TableContainer>
+                    </TableHead>
+                    <TableBody>
+                        <TableRow>
+                            <TableDataCell>Choose your plan according to your organizational needs</TableDataCell>
+                            <TableDataCell>Use freightdok to bid, book, service, and streamline back office tasks. </TableDataCell>
+                            <TableDataCell>Operate on your authority and let us handle all your back office tasks and operations. </TableDataCell>
+                            <TableDataCell>Lease onto our authority and we will help manage your operations, payments, and compliance. </TableDataCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableDataCell />
+                            <TableDataCell><Button fullWidth variant='outlined'>Start free trial</Button></TableDataCell>
+                            <TableDataCell><Button fullWidth variant='outlined'>Get Started</Button></TableDataCell>
+                            <TableDataCell><Button fullWidth variant='outlined'>Get Started</Button></TableDataCell>
+                        </TableRow>
+                        {(pricing || []).map((price, i) => {
+                            return <TableRow key={i}>
+                                {price.map((item, j) => {
+                                    const cell = typeof item === 'boolean' ? getIcon(item) : item;
+                                    return (
+                                        <TableCell
+                                            key={j}
+                                            sx={{
+                                                textAlign: j === 0 ? 'left' : 'center',
+                                                color: FONT_COLOR_SECONDARY,
+                                                border: '1px solid #c4c4c4',
+                                                borderLeft: j === 0 ? 'none' : '1px solid #c4c4c4',
+                                                borderRight: j === price.length - 1 ? 'none' : '1px solid #c4c4c4',
+                                                padding: '8px',
+                                                backgroundColor: i % 2 !== 0 ? '#F3FBFC' : 'white', // header row background
+                                            }}
+                                        >
+                                            {cell}
+                                        </TableCell>
+                                    );
+                                })}
+                            </TableRow>
+                        })}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+        </Fade>
     </Stack>
 }
 

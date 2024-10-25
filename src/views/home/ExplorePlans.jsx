@@ -1,6 +1,6 @@
-import { Box, Grid, Typography } from '@mui/material'
+import { Box, Fade, Grid, Slide, Typography, Zoom } from '@mui/material'
 import { styled } from '@mui/material/styles'
-import React from 'react'
+import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 import { FONT_COLOR_PRIMARY, FONT_COLOR_SECONDARY, PRIMARY_BLUE } from '../../utils/utils'
@@ -22,17 +22,19 @@ const ExplorePlans = ({ explorePlans = [] }) => {
                         Find the right plans for your need.
                     </Typography>
                 </Grid>
-                <Grid item xs={12} sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 5 }}>
-                    {explorePlans.map(plan => {
-                        return <Card key={plan.title}>
-                            <Box component='img' alt={plan.title} sx={{ p: .5, width: plan.imgWidth ? plan.imgWidth : '5rem' }} src={plan.image + '.png'} />
-                            <Box sx={{ maxWidth: '30ch' }}>
-                                <Typography fontSize={22} color={FONT_COLOR_PRIMARY} fontWeight={600}>{plan.title}</Typography>
-                                <Typography fontSize={14} color={FONT_COLOR_SECONDARY}>{plan.detail}</Typography>
-                            </Box>
-                        </Card>
-                    })}
-                </Grid>
+                <Fade timeout={1000} in mountOnEnter unmountOnExit>
+                    <Grid item xs={12} sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 5 }}>
+                        {explorePlans.map(plan => {
+                            return <Card key={plan.title}>
+                                <Box component='img' alt={plan.title} sx={{ p: .5, width: plan.imgWidth ? plan.imgWidth : '5rem' }} src={plan.image + '.png'} />
+                                <Box sx={{ maxWidth: '30ch' }}>
+                                    <Typography fontSize={22} color={FONT_COLOR_PRIMARY} fontWeight={600}>{plan.title}</Typography>
+                                    <Typography fontSize={14} color={FONT_COLOR_SECONDARY}>{plan.detail}</Typography>
+                                </Box>
+                            </Card>
+                        })}
+                    </Grid>
+                </Fade>
                 <Grid item xs={12} textAlign='center'>
                     <Typography component={Link} to={routes.pricing} className='link-navigate' color={PRIMARY_BLUE} sx={{ textDecoration: 'none', fontWeight: 600 }} align='center'>
                         View our plans and pricing &#8594;

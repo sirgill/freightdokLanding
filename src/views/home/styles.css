@@ -21,10 +21,6 @@
     transform: translate(10%, -50%);
 }
 
-.sectionPadding {
-    margin: 5rem 0;
-}
-
 .links-navigate {
     text-decoration: none;
     color: #fff;
@@ -55,9 +51,6 @@
 }
 
 @media screen and (max-width: 650px) {
-    .sourceBookService {
-        font-size: 32px;
-    }
 
     .yourLoadsWith {
         font-size: 32px;
