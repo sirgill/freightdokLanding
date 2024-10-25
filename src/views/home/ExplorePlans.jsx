@@ -14,7 +14,7 @@ const Card = styled(Box)(() => ({
 
 const ExplorePlans = ({ explorePlans = [] }) => {
     return (
-        <Box sx={{ py: 5 }}>
+        <Box sx={{ py: { xs: 1, sm: 5 } }}>
             <Grid container sx={{ p: 3, px: 5, gap: 5 }}>
                 <Grid item xs={12}>
                     <Typography fontSize={28} color={FONT_COLOR_PRIMARY} fontWeight={600} align='center'>Explore our plans</Typography>

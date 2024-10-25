@@ -3,6 +3,7 @@ import Header from '../../components/Header';
 import { Box, Button, Fade, Grid, Stack, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles'
 import Slider from 'react-slick';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 import { BG_COLOR, FONT_COLOR_PRIMARY, FONT_COLOR_SECONDARY, PRIMARY_BLUE } from '../../utils/utils';
 import cw from "./../../assets/images/cw.png"
@@ -44,6 +45,7 @@ const Home = () => {
                         <Fade timeout={800} in>
                             <Button variant='contained' sx={{ px: 4, py: 1 }}
                                 onClick={goToSignUp}
+                                endIcon={<OpenInNewIcon />}
                             >
                                 Register
                             </Button>
