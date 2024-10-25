@@ -1,6 +1,6 @@
-import { Box, Fade, Grid, Slide, Typography, Zoom } from '@mui/material'
+import { Box, Fade, Grid, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles'
-import React, { useRef } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 import { FONT_COLOR_PRIMARY, FONT_COLOR_SECONDARY, PRIMARY_BLUE } from '../../utils/utils'
